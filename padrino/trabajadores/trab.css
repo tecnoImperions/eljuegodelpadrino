@@ -1,0 +1,282 @@
+/* TIPOGRAFÍA GENERAL */
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+body {
+    margin-left: 240px;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #e0e0e0;
+    font-family: 'Oswald', sans-serif;
+    overflow-x: hidden;
+    animation: fadeInBody 1s ease-in-out;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid #d4af37;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(60px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* TÍTULOS */
+h1, h2 {
+    font-weight: bold;
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+/* MENÚ LATERAL */
+#menu-lateral {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 240px;
+    background-color: #0a0a0a;
+    color: #f1f1f1;
+    padding: 25px 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.8);
+    font-family: 'Georgia', serif;
+    z-index: 1000;
+    border-right: 2px solid #d4af37;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#menu-lateral h2 {
+    color: #d4af37;
+    font-size: 26px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px #000;
+    border-bottom: 1px solid #d4af37;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+/* Botones del menú lateral */
+#menu-lateral button {
+    background: transparent;
+    color: #f1f1f1;
+    border: 1.5px solid #d4af37;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#menu-lateral button:hover {
+    background-color: #d4af37;
+    color: #0d0d0d;
+    box-shadow: 0 0 15px #d4af37;
+}
+
+/* ICONOS de Bootstrap en botones menú lateral */
+#menu-lateral i.bi {
+    font-size: 1.3rem;
+}
+
+/* RELOJ */
+#reloj {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d4af37;
+    animation: glow 1.2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 6px #d4af37; }
+    to { text-shadow: 0 0 16px #d4af37; }
+}
+
+/* ALERTAS */
+.alert-success {
+    background-color: #284d14 !important;
+    border-color: #3c763d !important;
+    color: #d4af37 !important;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+}
+
+/* TABLA PARTICIPACIONES */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-spacing: 0 8px;
+}
+
+th {
+    background: #1f1f1f;
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 8px;
+    text-shadow: 0 0 6px rgba(212, 175, 55, 0.3);
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 8px;
+}
+
+tbody tr {
+    background: #1a1a1a;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #2a2400;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+}
+
+/* IMÁGENES DE COMPROBANTES */
+img[alt^="Comprobante"] {
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+img[alt^="Comprobante"]:hover {
+    transform: scale(1.6);
+    z-index: 10;
+}
+
+/* BADGES ESTADO */
+.badge {
+    font-weight: 700;
+    font-size: 0.9rem;
+    min-width: 90px;
+    border-radius: 14px;
+    padding: 6px 12px;
+    text-transform: capitalize;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+.bg-success {
+    background-color: #27ae60 !important;
+}
+
+.bg-danger {
+    background-color: #c0392b !important;
+}
+
+.bg-secondary {
+    background-color: #555 !important;
+}
+
+/* FORMULARIOS DE ACCIÓN */
+form.d-inline {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+form select.form-select {
+    background-color: #111;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    border-radius: 6px;
+    padding: 6px 10px;
+    transition: all 0.3s ease;
+    width: auto;
+    min-width: 120px;
+}
+form select.form-select:focus {
+    outline: none;
+    box-shadow: 0 0 12px #d4af37;
+    background-color: #222;
+}
+
+/* BOTONES DE ACCIÓN CON ÍCONOS */
+form button.btn {
+    padding: 6px 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    vertical-align: middle;
+}
+
+form button.btn-success {
+    background-color: #198754;
+    color: white;
+}
+form button.btn-success:hover {
+    background-color: #157347;
+    transform: scale(1.1);
+}
+
+form button.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+form button.btn-danger:hover {
+    background-color: #bb2d3b;
+    transform: scale(1.1);
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.85em;
+    color: #aaa;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+}
+.footer:hover {
+    opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        margin-left: 0;
+    }
+    #menu-lateral {
+        display: none;
+    }
+    .container {
+        margin: 20px 10px;
+        padding: 20px;
+        border-radius: 12px;
+    }
+}

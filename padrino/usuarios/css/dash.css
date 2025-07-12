@@ -1,0 +1,314 @@
+/* Estilos base comunes */
+body {
+    
+    font-family: 'Oswald', sans-serif;
+    transition: all 0.3s ease;
+
+}
+
+.mafia-header {
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.bienvenida {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.btn-custom {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-contrast);
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.btn-custom:hover {
+    background: linear-gradient(135deg, var(--hover-color), var(--primary-color));
+    color: var(--text-contrast);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.btn-participar {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-participar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px var(--glow-color);
+}
+
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.75rem;
+}
+
+.badge-custom {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    color: var(--text-contrast);
+    font-size: 1rem;
+    padding: 0.5em 0.75em;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px var(--glow-color);
+}
+
+.table tr {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: fly-in 0.5s ease-out forwards;
+}
+
+@keyframes fly-in {
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent, var(--bg-color));
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    z-index: 1030;
+}
+
+.nav-bottom .nav-item {
+    color: var(--primary-color);
+    text-align: center;
+    flex-grow: 1;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+.nav-bottom .nav-item i {
+    font-size: 1.3rem;
+    display: block;
+}
+
+.nav-bottom .nav-item:hover {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    color: var(--text-contrast);
+    transform: translateY(-3px);
+}
+
+.reloj-mafia {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    white-space: nowrap;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+
+/* Estilos específicos para PLAN GRATUITO */
+.plan-gratuito {
+    --bg-color: #0b0b0b;
+    --primary-color: #f1c40f;
+    --secondary-color: #e67e22;
+    --accent-color: #d4ac0d;
+    --hover-color: #f39c12;
+    --text-color: #f1c40f;
+    --text-contrast: #0f0f0f;
+    --glow-color: rgba(241, 196, 15, 0.3);
+}
+
+.plan-gratuito body {
+    background-color: #0f0f0f; /* Fondo oscuro sólido */
+    color: var(--text-color);
+}
+
+.plan-gratuito body::after,
+.plan-gratuito body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -2;
+    animation: fadeImages 20s infinite;
+}
+
+.plan-gratuito body::after {
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-formas-onduladas-doradas_1035-9069.jpg?t=st=1749499103~exp=1749502703~hmac=dc10b0409ffb7eff70ed1b9e74ae094a00d789cbc19350bdb51c7e8d80b12ae9');
+    animation-delay: 0s;
+}
+
+.plan-gratuito body::before {
+    background-image: url('https://img.freepik.com/vector-gratis/vector-diseno-gradiente-fondo-colorido_677411-3356.jpg?semt=ais_hybrid&w=740');
+    animation-delay: 10s;
+}
+
+
+@keyframes fadeImages {
+    0%, 100% { opacity: 0; }
+    40%, 60% { opacity: 0.15; }
+}
+
+
+/* Estilos específicos para PLAN PLUS */
+.plan-plus {
+    --bg-color: #1a0d2e;
+    --primary-color: #9b59b6;
+    --secondary-color: #8e44ad;
+    --accent-color: #c39bd3;
+    --hover-color: #bb8fce;
+    --text-color: #e8daef;
+    --text-contrast: #ffffff;
+    --glow-color: rgba(155, 89, 182, 0.4);
+}
+
+.plan-plus body {
+    background: linear-gradient(135deg, #1a0d2e 0%, #2c1e4a 50%, #3e2863 100%);
+    color: var(--text-color);
+}
+
+.plan-plus .table-dark {
+    background: linear-gradient(135deg, rgba(26, 13, 46, 0.9), rgba(60, 40, 99, 0.8));
+    backdrop-filter: blur(10px);
+}
+
+/* Estilos específicos para PLAN PRO */
+.plan-pro {
+    --bg-color: #0a1929;
+    --primary-color: #00d4ff;
+    --secondary-color: #0288d1;
+    --accent-color: #4fc3f7;
+    --hover-color: #29b6f6;
+    --text-color: #e3f2fd;
+    --text-contrast: #000000;
+    --glow-color: rgba(0, 212, 255, 0.4);
+}
+
+.plan-pro body {
+    background: linear-gradient(135deg, #0a1929 0%, #1e3a8a 50%, #1565c0 100%);
+    color: var(--text-color);
+    position: relative;
+}
+
+.plan-pro body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(79, 195, 247, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.plan-pro .table-dark {
+    background: linear-gradient(135deg, rgba(10, 25, 41, 0.9), rgba(21, 101, 192, 0.8));
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.plan-pro .mafia-header {
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+    border-radius: 10px;
+}
+
+/* Efectos especiales para plan PRO */
+.plan-pro .btn-custom {
+    position: relative;
+    overflow: hidden;
+}
+
+.plan-pro .btn-custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.plan-pro .btn-custom:hover::before {
+    left: 100%;
+}
+
+/* Animaciones adicionales para plan PRO */
+.plan-pro .badge-custom {
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 10px var(--glow-color);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .mafia-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .bienvenida {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+    }
+    
+    .btn-custom {
+        font-size: 1rem;
+    }
+    
+    .table th, .table td {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+}
+
+/* Efectos hover mejorados */
+.table-hover tbody tr:hover {
+    background: linear-gradient(90deg, transparent, var(--glow-color), transparent) !important;
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+/* Estilos para modales */
+.modal-content {
+    background: linear-gradient(135deg, var(--bg-color), rgba(0,0,0,0.9)) !important;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 10px 30px var(--glow-color);
+}
+
+.offcanvas {
+    background: linear-gradient(135deg, var(--bg-color), rgba(0,0,0,0.95)) !important;
+    backdrop-filter: blur(15px);
+}

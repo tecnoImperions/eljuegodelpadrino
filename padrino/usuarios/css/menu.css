@@ -1,0 +1,104 @@
+.offcanvas {
+    background: linear-gradient(135deg, #0b0f16, #121820, rgba(5, 5, 5, 0.98)) !important;
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    color: #cbd5e1; /* texto claro, ligeramente azulado */
+    border-right: 1.5px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 6px 0 30px rgba(0, 0, 0, 0.7);
+    animation: slideInGlow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Oswald', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.06em;
+    text-shadow: 0 0 6px rgba(99, 102, 241, 0.5);
+    user-select: none;
+    position: relative;
+    z-index: 1050;
+}
+
+/* Animación con glow y slide */
+@keyframes slideInGlow {
+    0% {
+        transform: translateX(-110%);
+        opacity: 0;
+        box-shadow: 0 0 0px transparent;
+    }
+    70% {
+        opacity: 1;
+        transform: translateX(10%);
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+    }
+    100% {
+        transform: translateX(0);
+        box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+    }
+}
+
+/* Enlaces con efecto neón mafioso */
+.offcanvas-body a.nav-link {
+    position: relative;
+    color: #94a3b8; /* gris azulado */
+    font-weight: 600;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    padding-left: 0.25rem;
+}
+
+/* Efecto brillo al pasar mouse */
+.offcanvas-body a.nav-link:hover,
+.offcanvas-body a.nav-link:focus {
+    color: #6366f1;
+    text-shadow:
+        0 0 6px #6366f1,
+        0 0 12px #6366f1,
+        0 0 18px #6366f1;
+    cursor: pointer;
+}
+
+/* Añadir pequeño “neón” animado en la izquierda del link activo */
+.offcanvas-body a.nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(180deg, #6366f1, #4338ca);
+    border-radius: 2px;
+    box-shadow:
+        0 0 8px #6366f1,
+        0 0 16px #4338ca;
+    animation: pulseGlow 2.5s infinite alternate;
+}
+
+/* Animación de pulso para el indicador activo */
+@keyframes pulseGlow {
+    from {
+        opacity: 0.7;
+        box-shadow:
+            0 0 10px #6366f1,
+            0 0 20px #4338ca;
+    }
+    to {
+        opacity: 1;
+        box-shadow:
+            0 0 18px #6366f1,
+            0 0 30px #4338ca;
+    }
+}
+
+/* Scroll personalizado y sutil */
+.offcanvas-body {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #6366f1 transparent;
+    padding-right: 0.5rem;
+}
+
+.offcanvas-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.offcanvas-body::-webkit-scrollbar-thumb {
+    background-color: #6366f1;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(99, 102, 241, 0.8);
+}
